@@ -1,13 +1,21 @@
-// document.body.children[1].children[0].href = 'https://google.com';
+let paragraphElement = document.querySelector('p');
 
-// console.dir(document);
-// alert();
-// window.alert();
+function changeParagraphText(event) {
+  paragraphElement.textContent = 'Clicked!';
+  console.log('Paragraph clicked!');
+  console.log(event);
+}
 
-let anchorElement = document.getElementById('external-link');
-anchorElement.href = 'https://google.com';
+paragraphElement.addEventListener('click', changeParagraphText);
 
-anchorElement = document.querySelector('p a'); // p a { color: red; }
-anchorElement.href = 'https://academind.com';
+let inputElement = document.querySelector('input');
 
-anchorElement = document.querySelector;
+function retrieveUserInput(event) {
+  // let enteredText = inputElement.value;
+  let enteredText = event.target.value;
+  // let enteredText = event.data; => This is different!
+  console.log(enteredText);
+  // console.log(event);
+}
+
+inputElement.addEventListener('input', retrieveUserInput);
